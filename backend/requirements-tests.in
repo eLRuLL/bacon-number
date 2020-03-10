@@ -1,0 +1,13 @@
+-r requirements.in
+mock
+flake8
+pytest
+flake8-bugbear
+flake8-colors
+flake8-commas
+flake8-comprehensions
+flake8-import-order
+flake8-logging-format
+flake8-print
+flake8-quotes
+flake8-docstrings

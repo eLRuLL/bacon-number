@@ -1,0 +1,5 @@
+- Better handling and creation of people to insert into neo4j
+- Better service serialization to be handled on a RESTful way
+- API endpoints to add people, movies and relations
+- More flask specific tests
+- Secured way to handle neo4j credentials
