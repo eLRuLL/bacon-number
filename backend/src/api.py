@@ -1,5 +1,5 @@
 from flask import Blueprint
-from src.db import get_db
+from src.db import get_db_session
 
 bp = Blueprint('api', __name__)
 
@@ -29,8 +29,7 @@ def index(from_name, to_name):
     if from_name == to_name:
         return response
 
-    neo4j_db = get_db()
-    with neo4j_db.session() as session:
+    with get_db_session() as session:
         path_result = get_single_result(session, path_query.format(from_name=from_name, to_name=to_name), 'path')
         if not path_result:
             return response

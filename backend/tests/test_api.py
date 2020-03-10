@@ -10,8 +10,9 @@ def test_same_name(client, random_name):
     assert response_data['number'] == 0
 
 
+@mock.patch('src.api.get_db_session')
 @mock.patch('src.api.get_single_result')
-def test_empty_result(single_result, client, random_name):
+def test_empty_result(single_result, _, client, random_name):
     """Test no results from database gives back an empty response."""
     single_result.return_value = None
     response = client.get(f'/{random_name()}/{random_name()}')
@@ -20,8 +21,9 @@ def test_empty_result(single_result, client, random_name):
     assert response_data['number'] == 0
 
 
+@mock.patch('src.api.get_db_session')
 @mock.patch('src.api.get_single_result')
-def test_get_result(single_result, client, random_name, mock_path):
+def test_get_result(single_result, _, client, random_name, mock_path):
     """Test response with actual results from the db."""
     single_result.return_value = mock_path(relations=5)
     response = client.get(f'/{random_name()}/{random_name()}')

@@ -13,6 +13,11 @@ def get_db():
     return g.db
 
 
+def get_db_session():
+    neo4j_db = get_db()
+    return neo4j_db.session()
+
+
 def close_db(e=None):
     db = g.pop('db', None)
     if db is not None:
