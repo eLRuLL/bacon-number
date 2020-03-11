@@ -12,3 +12,4 @@
 - Improve UI in general
 - Add command arguments to the populate scripts
 - Pass the populate scripts inside the flask app
+- Prepare integration tests and add github actions for all services (only backend right now)
