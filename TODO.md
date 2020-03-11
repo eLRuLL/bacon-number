@@ -3,3 +3,6 @@
 - API endpoints to add people, movies and relations
 - More flask specific tests
 - Secured way to handle neo4j credentials
+- Better handle CORS (don't disable entirely or use a reverse proxy)
+- Fix frontend initialization errors
+- Be careful of SQL Injection or in this case, Cypher Injection
