@@ -6,7 +6,7 @@ def get_db():
     if 'db' not in g:
         g.db = GraphDatabase.driver(
             current_app.config['DATABASE_URL'],
-            auth=(current_app.config['DATABASE_USERNAME'], current_app.config['DATABASE_PASSWORD']),
+            # auth=(current_app.config['DATABASE_USERNAME'], current_app.config['DATABASE_PASSWORD']),
             encrypted=False,
         )
 

@@ -260,7 +260,7 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.8.7.tgz#7b8facf95d25fef9534aad51c4ffecde1a61e26a"
   integrity sha512-9JWls8WilDXFGxs0phaXAZgpxTZhSk/yOYH2hTHC0X1yC7Z78IJfvR1vJ+rmJKq3I35td2XzXzN6ZLYlna+r/A==
 
-"@babel/plugin-proposal-async-generator-functions@^7.8.3":
+"@babel/plugin-pro  posal-async-generator-functions@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-async-generator-functions/-/plugin-proposal-async-generator-functions-7.8.3.tgz#bad329c670b382589721b27540c7d288601c6e6f"
   integrity sha512-NZ9zLv848JsV3hs8ryEh7Uaz/0KsmPLqv0+PdkDJL1cJy0K4kOCFa8zc1E3mp+RHPQcpdfb/6GovEsW4VDrOMw==

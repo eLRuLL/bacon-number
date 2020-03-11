@@ -12,7 +12,11 @@ userName = "neo4j"
 password = "password"
 
 # Connect to the neo4j database server
-driver = GraphDatabase.driver(uri, auth=(userName, password), encrypted=False)
+driver = GraphDatabase.driver(
+    uri,
+    # auth=(userName, password),
+    encrypted=False,
+)
 
 
 people_query = f"""

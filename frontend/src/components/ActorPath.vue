@@ -40,17 +40,17 @@
         name: "ActorPath",
         data() {
             return {
-                data: null,
+                data: {},
                 people: null,
                 movies: null,
                 connections: null,
-                name1: null,
-                name2: null,
+                name1: 'Kevin Bacon',
+                name2: 'Fernanda Urrejola',
             };
         },
         created: function () {
             axios
-                .get('http://localhost:5000/Kevin%20Bacon/Fernanda%20Urrejola')
+                .get(process.env.VUE_APP_API_URL + '/' + this.name1 + '/' + this.name2)
                 .then(res => {
                     this.data = res.data;
                     this.people = {};
@@ -72,13 +72,15 @@
                         };
                         j++;
                     }
-                })
+                }).catch((error) => {
+                    console.warn(error);
+            })
         },
         methods: {
             formSubmit(e) {
                 e.preventDefault();
                 // let currentObj = this;
-                axios.get('http://localhost:5000/' + this.name1 + '/' + this.name2).then(
+                axios.get(process.env.VUE_APP_API_URL + '/' + this.name1 + '/' + this.name2).then(
                     res => {
                         this.data = res.data;
                         this.people = {};
@@ -101,7 +103,9 @@
                             j++;
                         }
                     }
-                )
+                ).catch((error) => {
+                    console.warn(error);
+                })
             }
         }
     }

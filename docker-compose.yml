@@ -1,7 +1,36 @@
-version: '3'
+version: '3.7'
 services:
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VUE_APP_API_URL: http://127.0.0.1/service
+    volumes:
+      - static-content:/app/dist
+
+  backend:
+    build:
+      context: ./backend
+    expose:
+      - "5000"
+    links:
+      - neo4j:neo4j
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - static-content:/usr/share/nginx/html:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+
   neo4j:
     image: neo4j
+    environment:
+      - NEO4J_AUTH=none
     volumes:
        - neo4jdata:/data
        - .:/var/lib/neo4j/import
@@ -11,3 +40,4 @@ services:
 
 volumes:
   neo4jdata:
+  static-content:

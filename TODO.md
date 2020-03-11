@@ -6,3 +6,9 @@
 - Better handle CORS (don't disable entirely or use a reverse proxy)
 - Fix frontend initialization errors
 - Be careful of SQL Injection or in this case, Cypher Injection
+- Environment Variables support for ENDPOINT connections
+- Make data migration faster and handled better
+- SETUP production deployment for the backend 
+- Improve UI in general
+- Add command arguments to the populate scripts
+- Pass the populate scripts inside the flask app
